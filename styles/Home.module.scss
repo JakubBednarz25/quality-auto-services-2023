@@ -1,0 +1,198 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .hero {
+    width: 100vw;
+    height: 80vh;
+    .video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    background-color: var(--black);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    border: 1px solid var(--black);
+    .shade {
+      padding-top: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--black);
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0.85) 50%,
+        rgba(0, 0, 0, 0.6) 100%
+      );
+      width: 100vw;
+      height: 80vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      .informationSection {
+        display: flex;
+        flex-direction: column;
+        padding:2.5rem;
+        gap: 2.5rem;
+        .textSection {
+          color: var(--white);
+          max-width: 600px;
+          p {
+            font-size:18px;
+            font-style:italic;
+          }
+        }
+        .buttons {
+          display: flex;
+          gap: 2rem;
+        }
+      }
+    }
+  }
+  .socialProof {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap:wrap;
+    gap: 5vw;
+    padding: 32px;
+    li {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      svg {
+        margin: auto;
+      }
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+  .section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 32px;
+    width:90vw;
+    max-width:800px;
+    margin-top:75px;
+    p{
+      font-size:1.25rem;
+    }
+    .customHr {
+      width: 30px;
+      height: 3px;
+      background-color: var(--primary-darker-1);
+      margin-top: -5px;
+    }
+    .bodiesWrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      .truckBody {
+        position: relative;
+        .bodyImageContainer {
+          position: relative;
+          width: 360px;
+          height: 250px;
+        }
+        .shade {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.75);
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+          padding: 24px;
+        }
+      }
+      .truckBody:hover {
+        .shade {
+          background-color: rgba(0, 0, 0, 0.5);
+          transition-duration: 0.25s;
+        }
+        .bodyImageContainer .image {
+          transform: scale(1.5);
+          transition-duration: 0.25s;
+        }
+      }
+    }
+    .featuresWrapper {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      .feature {
+        background-color: var(--black);
+        border-radius: 10px;
+        padding: 16px;
+        svg {
+          width: 32px;
+          height: 32px;
+          margin: auto;
+          margin-bottom: 10px;
+        }
+        text-align: center;
+        label {
+          color: var(--white);
+        }
+      }
+    }
+    .information {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      svg {
+        width: var(--base-up-2);
+        height: var(--base-up-2);
+      }
+    }
+    .brandLogos {
+      display: flex;
+      flex-direction:row;
+      gap:1rem;
+      flex-wrap:wrap;
+    }
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .container {
+    .hero {
+      .informationSection {
+        .buttons {
+          flex-direction:column;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:850px){
+  .container{
+    .section{
+      .bodiesWrapper{
+        grid-template-columns: 360px;
+        align-self:center;
+      }
+      .featuresWrapper{
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:450px){
+  .container{
+    .socialProof{
+      flex-direction:column;
+      align-items:flex-start;
+    }
+  }
+}

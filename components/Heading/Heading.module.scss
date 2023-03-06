@@ -1,0 +1,28 @@
+.headingContainer {
+    width: 100vw;
+    height: 20vh;
+    background-image: url("/page_header_image.png");
+    background-position:center;
+    background-size: cover;
+    background-repeat:no-repeat;
+    position: relative;
+    .shade {
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0.85) 50%,
+        rgba(0, 0, 0, 0.6) 100%
+      );
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      padding:var(--base-up-2);  
+      display:flex;
+      justify-content:flex-start;
+      align-items:flex-end;
+      h1{
+        color: var(--white);
+      }
+    }
+  }
