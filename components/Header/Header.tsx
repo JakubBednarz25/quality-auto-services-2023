@@ -41,7 +41,7 @@ const Header = () => {
   useEffect(() => {
     if (typeof window !== "undefined"){
       window.addEventListener("scroll", () => {
-        setSmall(window.pageYOffset > 200);
+        setSmall(window.pageYOffset > 100);
       })
     }
   }, [])
