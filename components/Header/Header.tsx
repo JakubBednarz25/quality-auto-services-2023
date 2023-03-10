@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import styles from "./Header.module.scss";
+import {useRouter} from 'next/router';
 
 type NavigationLinkType = {
   page: string;
@@ -37,6 +38,12 @@ const navigationLinks: NavigationLinkType[] = [
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
   const [small, setSmall] = useState<boolean>(false);
+
+  const dynamicRoute = useRouter().asPath;
+
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [dynamicRoute])
 
   useEffect(() => {
     if (typeof window !== "undefined") {

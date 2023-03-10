@@ -3,6 +3,7 @@ import styles from "../../styles/Body.module.scss";
 import Image from "next/image";
 import Button from "../../components/Button/Button";
 import ContactForm from "../../components/Form/ContactForm";
+import Head from "next/head";
 
 const trucks = [
   {
@@ -102,9 +103,9 @@ const trucks = [
       },
     ],
     images: [
-      "/trucks/Beaver tail/beaver-tail-truck-body-3.5T.jpg",
-      "/trucks/Beaver tail/beaver-tail-truck-body-5T.jpg",
-      "/trucks/Beaver tail/beaver-tail-truck-body-7T.jpg",
+      "/trucks/Flat bed/flat-bed-1.jpg",
+      "/trucks/Flat bed/flat-bed-3.jpg",
+      "/trucks/Flat bed/flat-bed-4.jpg",
     ],
     weights: [
       {
@@ -127,21 +128,22 @@ const trucks = [
   {
     id: 4,
     name: "Twin deck",
-    descriptions:[
+    descriptions: [
       {
         id: 1,
-        content: "The twin-deck body is designed to maximize space and efficiency, allowing for the transportation of multiple vehicles at once. The upper deck is hydraulically operated, allowing for easy and precise positioning of the load. The lower deck can also be used to transport additional vehicles, maximizing the capacity of the body and increasing the efficiency of your business."
-      
+        content:
+          "The twin-deck body is designed to maximize space and efficiency, allowing for the transportation of multiple vehicles at once. The upper deck is hydraulically operated, allowing for easy and precise positioning of the load. The lower deck can also be used to transport additional vehicles, maximizing the capacity of the body and increasing the efficiency of your business.",
       },
       {
         id: 2,
-        content: "Our twin-deck body features a robust and durable construction that is built to withstand even the toughest conditions. We use only high-quality materials that are designed to be long-lasting and resistant to wear and tear, ensuring that your investment is protected for years to come."
-
+        content:
+          "Our twin-deck body features a robust and durable construction that is built to withstand even the toughest conditions. We use only high-quality materials that are designed to be long-lasting and resistant to wear and tear, ensuring that your investment is protected for years to come.",
       },
       {
         id: 3,
-        content: "The twin-deck body is an excellent choice for businesses that need a versatile and efficient recovery truck body. Its hydraulically operated upper deck, durable construction, and customizable features make it an ideal investment for any business. Contact us today to learn more about our twin-deck body and our other recovery truck bodies, and how we can help you meet your recovery needs."
-      }
+        content:
+          "The twin-deck body is an excellent choice for businesses that need a versatile and efficient recovery truck body. Its hydraulically operated upper deck, durable construction, and customizable features make it an ideal investment for any business. Contact us today to learn more about our twin-deck body and our other recovery truck bodies, and how we can help you meet your recovery needs.",
+      },
     ],
     images: [
       "/trucks/Twin deck/twin-deck-1.jpg",
@@ -170,41 +172,46 @@ export const getServerSideProps = (ctx) => {
 const Body = ({ truck }) => {
   console.log(truck);
   return (
-    <div className={styles.container}>
-      <Heading heading={truck.name} />
-      <section className={styles.description}>
-        {truck.descriptions.map((description) => (
-          <p key={`paragraph-${description.id}`}>{description.content}</p>
-        ))}
-      </section>
-      <section className={styles.images}>
-        {truck.images.map((image) => (
-          <Image
-            src={image}
-            alt={`Image of ${truck.name} truck body`}
-            width={325}
-            height={250}
-          />
-        ))}
-      </section>
-      <div className={styles.weights}>
-        {truck.weights.map((weight) => (
-          <article className={styles.truckBody}>
-            <header>
-              <h3>{`${weight.weight} ${truck.name}`}</h3>
-              <div className={styles.divider}></div>
-              <span>
-                <p>Starting from</p>
-                <b>{`£${(weight.price / 100).toLocaleString()}.00`}</b>
-              </span>
-            </header>
-          </article>
-        ))}
+    <>
+      <Head>
+        <title>{`${truck.name} | Quality Auto Services`}</title>
+      </Head>
+      <div className={styles.container}>
+        <Heading heading={truck.name} />
+        <section className={styles.description}>
+          {truck.descriptions.map((description) => (
+            <p key={`paragraph-${description.id}`}>{description.content}</p>
+          ))}
+        </section>
+        <section className={styles.images}>
+          {truck.images.map((image) => (
+            <Image
+              src={image}
+              alt={`Image of ${truck.name} truck body`}
+              width={325}
+              height={250}
+            />
+          ))}
+        </section>
+        <div className={styles.weights}>
+          {truck.weights.map((weight) => (
+            <article className={styles.truckBody}>
+              <header>
+                <h3>{`${weight.weight} ${truck.name}`}</h3>
+                <div className={styles.divider}></div>
+                <span>
+                  <p>Starting from</p>
+                  <b>{`£${(weight.price / 100).toLocaleString()}.00`}</b>
+                </span>
+              </header>
+            </article>
+          ))}
+        </div>
+        <section className={styles.formWrapper}>
+          <ContactForm />
+        </section>
       </div>
-      <section className={styles.formWrapper}>
-        <ContactForm />
-      </section>
-    </div>
+    </>
   );
 };
 
