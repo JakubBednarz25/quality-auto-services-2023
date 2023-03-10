@@ -5,6 +5,7 @@ import Button from "../components/Button/Button";
 import styles from "../styles/Home.module.scss";
 
 import ContactForm from "../components/Form/ContactForm";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
@@ -138,7 +139,9 @@ const Home: NextPage = () => {
               />
             </div>
             <div className={styles.shade}>
-              <Button background={false}>Beaver tails</Button>
+              <Button background={false}>
+                <Link href="/body/Beaver tail">Beaver tails</Link>
+              </Button>
             </div>
           </article>
           <article className={styles.truckBody}>
@@ -151,7 +154,9 @@ const Home: NextPage = () => {
               />
             </div>
             <div className={styles.shade}>
-              <Button background={false}>Twin deck</Button>
+              <Button background={false}>
+                <Link href="/body/Twin deck">Twin deck</Link>
+              </Button>
             </div>
           </article>
           <article className={styles.truckBody}>
@@ -164,7 +169,7 @@ const Home: NextPage = () => {
               />
             </div>
             <div className={styles.shade}>
-              <Button background={false}>Flat bed</Button>
+              <Button background={false}><Link href="/body/Flat bed">Flat bed</Link></Button>
             </div>
           </article>
           <article className={styles.truckBody}>
@@ -177,7 +182,7 @@ const Home: NextPage = () => {
               />
             </div>
             <div className={styles.shade}>
-              <Button background={false}>Tilt & slide</Button>
+              <Button background={false}><Link href="/body/Tilt & slide">Tilt & slide</Link></Button>
             </div>
           </article>
         </div>

@@ -39,22 +39,24 @@ const Header = () => {
   const [small, setSmall] = useState<boolean>(false);
 
   useEffect(() => {
-    if (typeof window !== "undefined"){
+    if (typeof window !== "undefined") {
       window.addEventListener("scroll", () => {
         setSmall(window.pageYOffset > 100);
-      })
+      });
     }
-  }, [])
+  }, []);
 
   return (
     <header className={`${styles.header} ${small ? styles.small : ""}`}>
       <div className={styles.logo}>
-        <Image
-          alt="QAS header logo"
-          src="/logo_header.png"
-          fill
-          object-fit="contain"
-        />
+        <Link href="/">
+          <Image
+            alt="QAS header logo"
+            src="/logo_header.png"
+            fill
+            object-fit="contain"
+          />
+        </Link>
       </div>
       <nav>
         {!mobileMenuOpen ? (

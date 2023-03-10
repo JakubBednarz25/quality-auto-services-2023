@@ -8,5 +8,22 @@
     display:flex;
     flex-direction:column;
     gap:2.5rem;
+    .brands{
+      display:grid;
+      gap:1rem;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      place-items:center;
+    }
+  }
+}
+
+@media only screen and (max-width:1000px){
+  .container{
+    .wrapper{
+      .brands{
+        gap:2rem;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
   }
 }
