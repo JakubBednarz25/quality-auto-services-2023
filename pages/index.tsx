@@ -28,8 +28,8 @@ const Home: NextPage = () => {
                 </p>
               </div>
               <div className={styles.buttons}>
-                <Button background={true}>Get a Quote</Button>
-                <Button background={false}>Our Services</Button>
+                <Button background={true}><Link href="/contact">Get a Quote</Link></Button>
+                <Button background={false}><Link href="/bodies">Our Services</Link></Button>
               </div>
             </div>
           </div>

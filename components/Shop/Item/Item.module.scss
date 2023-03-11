@@ -20,6 +20,9 @@
         font-weight:500;
         font-size:var(--base-up-1);
     }
+    p, span{
+        color:black;
+    }
 }
 .item:hover > .imageContainer > img {
     transition-duration:0.2s;

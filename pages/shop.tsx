@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 import Heading from "../components/Heading/Heading";
 import styles from "../styles/Shop.module.scss";
 
-import type { catetgory, ItemType } from "../utils/items";
+import type { category, ItemType } from "../utils/items";
 import { items } from "../utils/items";
 
 import Item from "../components/Shop/Item/Item";
 import Head from "next/head";
 
 const Shop = () => {
-  const [category, setCategory] = useState<catetgory>("LED Lights");
+  const [category, setCategory] = useState<category>("LED Lights");
   const [displayedItems, setDisplayedItems] = useState<ItemType[]>([]);
   useEffect(() => {
     setDisplayedItems(items.filter((item) => item.category === category));
@@ -17,7 +17,7 @@ const Shop = () => {
   return (
     <>
       <Head>
-        <title>{`Shop - Quality Auto Services`}</title>
+        <title>Shop | Quality Auto Services</title>
       </Head>
       <div className={styles.container}>
         <Heading heading={"Shop"} />

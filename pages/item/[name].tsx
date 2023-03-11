@@ -33,7 +33,7 @@ const ItemPage = ({ item }: ItemType) => {
   return (
     <>
       <Head>
-        <title>{`${item.name} - Quality Auto Services`}</title>
+        <title>{`${item.name} | Quality Auto Services`}</title>
       </Head>
       <div className={styles.container}>
         <Heading heading={`${item.name}`} />
