@@ -6,7 +6,15 @@ import Footer from "../components/Footer/Footer";
 
 import Head from "next/head";
 
+import { CartContext } from "../utils/CartContext";
+import { useCart } from "../utils/Hooks";
+import { useContext, useMemo } from "react";
+
 function MyApp({ Component, pageProps }: AppProps) {
+  const { cart, setCart, setItemAmount } = useCart();
+  const providerCart = useMemo(() => {
+    return { cart, setCart, setItemAmount };
+  }, [cart, setCart]);
   return (
     <>
       <Head>
@@ -21,11 +29,13 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <meta property="og:image" content="/logo.png" />
       </Head>
-      <div className="page">
-        <Header />
-        <Component {...pageProps} />
-        <Footer />
-      </div>
+      <CartContext.Provider value={providerCart}>
+        <div className="page">
+          <Header />
+          <Component {...pageProps} />
+          <Footer />
+        </div>
+      </CartContext.Provider>
     </>
   );
 }

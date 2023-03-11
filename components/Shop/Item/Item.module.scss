@@ -1,0 +1,27 @@
+.item{
+    cursor:pointer;
+    max-width: 300px;
+    display:flex;
+    flex-direction:column;
+    gap:0.2rem;
+    border:2px solid var(--gray-lighter-2);
+    padding: var(--base-lower-1);
+    .imageContainer{
+        padding: var(--base-lower-1);
+        align-self:center;
+        overflow:hidden;
+    }
+    p{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    span{
+        font-weight:500;
+        font-size:var(--base-up-1);
+    }
+}
+.item:hover > .imageContainer > img {
+    transition-duration:0.2s;
+    transform: scale(1.2);
+}
