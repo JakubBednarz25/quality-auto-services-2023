@@ -40,7 +40,7 @@ const Shop = () => {
           </div>
           <div className={styles.items}>
             {displayedItems.map((displayedItem) => (
-              <Item {...displayedItem} />
+              <Item key={displayedItem.id} {...displayedItem} />
             ))}
           </div>
         </div>

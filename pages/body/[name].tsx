@@ -170,7 +170,6 @@ export const getServerSideProps = (ctx) => {
 };
 
 const Body = ({ truck }) => {
-  console.log(truck);
   return (
     <>
       <Head>
@@ -186,6 +185,7 @@ const Body = ({ truck }) => {
         <section className={styles.images}>
           {truck.images.map((image) => (
             <Image
+              key={image}
               src={image}
               alt={`Image of ${truck.name} truck body`}
               width={325}
@@ -195,7 +195,7 @@ const Body = ({ truck }) => {
         </section>
         <div className={styles.weights}>
           {truck.weights.map((weight) => (
-            <article className={styles.truckBody}>
+            <article className={styles.truckBody} key={`${truck.name}-${weight.weight}`}>
               <header>
                 <h3>{`${weight.weight} ${truck.name}`}</h3>
                 <div className={styles.divider}></div>

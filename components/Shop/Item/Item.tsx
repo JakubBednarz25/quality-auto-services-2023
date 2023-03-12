@@ -6,7 +6,6 @@ import { FunctionComponent } from "react";
 import Link from "next/link";
 
 const Item: FunctionComponent<ItemType> = ({ ...itemInfo }: ItemType) => {
-  console.log(itemInfo);
   return (
     <Link href={`/item/${itemInfo.name}`}>
       <article className={styles.item}>
