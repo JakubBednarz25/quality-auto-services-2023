@@ -32,3 +32,18 @@
       height:25vh;
     }
   }
+
+  @media only screen and (max-height: 800px){
+    .headingContainer{
+      height:30vh;
+    }
+  }
+
+  @media only screen and (max-height: 500px){
+    .headingContainer{
+      height:60vh;
+      .shade{
+        padding-top:200px;
+      }
+    }
+  }
