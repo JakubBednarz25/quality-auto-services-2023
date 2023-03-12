@@ -34,6 +34,10 @@ const navigationLinks: NavigationLinkType[] = [
     page: "/contact",
     text: "Contact",
   },
+  {
+    page: "/cart",
+    text: "Cart"
+  }
 ];
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);

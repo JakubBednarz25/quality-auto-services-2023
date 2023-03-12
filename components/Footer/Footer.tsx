@@ -64,6 +64,9 @@ const Footer = () => {
             <li>
               <Link href="/contact">Contact</Link>
             </li>
+            <li>
+              <Link href="/terms">Terms & Conditions</Link>
+            </li>
           </ul>
           <ul className={styles.socialMediaLinks}>
             <li>
