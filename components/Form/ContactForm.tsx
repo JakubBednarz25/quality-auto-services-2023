@@ -3,6 +3,11 @@ import Button from "../Button/Button";
 
 import styles from "./Form.module.scss";
 
+import { FormType } from "../../utils/Types";
+
+import axios from "axios";
+import { useState } from "react";
+
 const validateEmail = (value: string) => {
   let error;
   if (!value) {
@@ -22,21 +27,42 @@ const validateText = (value: string) => {
 };
 
 const ContactForm = () => {
+  const [sending, setSending] = useState<boolean>(false);
+  const [receivedResponse, setReceivedResponse] = useState<boolean>(false);
+  const [sentSuccess, setSentSuccess] = useState<boolean>(false);
+  const initialValues: FormType = {
+    firstName: "",
+    lastName: "",
+    reference: "",
+    email: "",
+    mobile: "",
+    address: "",
+    truck: "Beaver tail",
+    financing: "no-financing",
+  };
+  const sendEmail = async (values: FormType) => {
+    const res = await axios.post("/api/email", {
+      body: {
+        form: values,
+      },
+    });
+    setSending(false);
+    setReceivedResponse(true);
+    if (res.status === 200) {
+      setSentSuccess(true);
+    } else {
+      setSentSuccess(false);
+    }
+    console.log(res);
+  };
   return (
     <Formik
-      initialValues={{
-        firstName: "",
-        lastName: "",
-        reference: "",
-        email: "",
-        mobile: "",
-        address: "",
-        truck: "",
-        financing: "",
-      }}
+      initialValues={initialValues}
       onSubmit={(values, actions) => {
         actions.setSubmitting(false);
         console.log(values, actions);
+        setSending(true);
+        sendEmail(values);
       }}
     >
       {(props: FormikProps<any>) => (
@@ -137,14 +163,29 @@ const ContactForm = () => {
               be able to get into contact with you.
             </p>
           </div>
-          <Button
-            background={true}
-            action={() => {
-              props.submitForm();
-            }}
-          >
-            Send enquiry
-          </Button>
+          {sending ? (
+            <div className={styles.sending}>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z" />
+              </svg>
+              <p>sending...</p>
+            </div>
+          ) : receivedResponse ? (
+            sentSuccess ? (
+              <p className={styles.infoText}>Successfully sent.</p>
+            ) : (
+              <p className={styles.infoText}>There was an issue. Try again</p>
+            )
+          ) : (
+            <Button
+              background={true}
+              action={() => {
+                props.submitForm();
+              }}
+            >
+              Send enquiry
+            </Button>
+          )}
         </Form>
       )}
     </Formik>
