@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const Item: FunctionComponent<ItemType> = ({ ...itemInfo }: ItemType) => {
   return (
-    <Link href={`/item/${itemInfo.name}`}>
+    <Link href={`/item/${itemInfo.slug}`}>
       <article className={styles.item}>
         <div className={styles.imageContainer}>
           <Image

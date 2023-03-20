@@ -16,7 +16,7 @@ const Home: NextPage = () => {
       <div className={styles.container}>
         <section className={styles.hero}>
           <video autoPlay muted loop className={styles.video}>
-            <source src="/VE Project 1.mp4" type="video/mp4" />
+            <source src="/hero-section-video.mp4" type="video/mp4" />
           </video>
           <div className={styles.shade}>
             <div className={styles.informationSection}>
@@ -28,8 +28,12 @@ const Home: NextPage = () => {
                 </p>
               </div>
               <div className={styles.buttons}>
-                <Button background={true}><Link href="/contact">Get a Quote</Link></Button>
-                <Button background={false}><Link href="/bodies">Our Services</Link></Button>
+                <Button background={true}>
+                  <Link href="/contact">Get a Quote</Link>
+                </Button>
+                <Button background={false}>
+                  <Link href="/bodies">Our Services</Link>
+                </Button>
               </div>
             </div>
           </div>
@@ -145,7 +149,7 @@ const Home: NextPage = () => {
               </div>
               <div className={styles.shade}>
                 <Button background={false}>
-                  <Link href="/body/Beaver tail">Beaver tails</Link>
+                  <Link href="/body/beaver-tail">Beaver tails</Link>
                 </Button>
               </div>
             </article>
@@ -160,14 +164,14 @@ const Home: NextPage = () => {
               </div>
               <div className={styles.shade}>
                 <Button background={false}>
-                  <Link href="/body/Twin deck">Twin deck</Link>
+                  <Link href="/body/twin-deck">Twin deck</Link>
                 </Button>
               </div>
             </article>
             <article className={styles.truckBody}>
               <div className={styles.bodyImageContainer}>
                 <Image
-                  src={"/flat-bed-recovery-truck.jpg"}
+                  src={"/trucks/Flat bed/flat-bed-1.jpg"}
                   alt="Recovery truck with the flat bed body"
                   fill
                   className="image"
@@ -175,7 +179,7 @@ const Home: NextPage = () => {
               </div>
               <div className={styles.shade}>
                 <Button background={false}>
-                  <Link href="/body/Flat bed">Flat bed</Link>
+                  <Link href="/body/flat-bed">Flat bed / Dropside</Link>
                 </Button>
               </div>
             </article>
@@ -190,7 +194,7 @@ const Home: NextPage = () => {
               </div>
               <div className={styles.shade}>
                 <Button background={false}>
-                  <Link href="/body/Tilt & slide">Tilt & slide</Link>
+                  <Link href="/body/tilt-and-slide">Tilt & slide</Link>
                 </Button>
               </div>
             </article>

@@ -6,6 +6,7 @@ import Link from "next/link";
 
 type TruckCardPropsType = {
   name: string;
+  slug: string;
   description: string;
   image: string;
   imageAlt: string;
@@ -14,6 +15,7 @@ type TruckCardPropsType = {
 
 const TruckCard: FunctionComponent<TruckCardPropsType> = ({
   name,
+  slug,
   description,
   image,
   imageAlt,
@@ -25,7 +27,7 @@ const TruckCard: FunctionComponent<TruckCardPropsType> = ({
         <h2>{name}</h2>
         <p>{description}</p>
         <Button background={false}>
-          <Link href={`/body/${name}`}>{buttonText}</Link>
+          <Link href={`/body/${slug}`}>{buttonText}</Link>
         </Button>
       </div>
       <div className={styles.imageContainer}>

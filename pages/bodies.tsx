@@ -16,6 +16,7 @@ const Bodies = () => {
         <div className={styles.trucksContainer}>
           <TruckCard
             name={"Beaver tail"}
+            slug={"beaver-tail"}
             buttonText={"View beaver tails"}
             description={
               "Our Beaver Tail bodies are engineered with a gradual incline ramp that ensures the safe transportation of vehicles. We use only the highest-quality materials and components, including reinforced steel framework and advanced hydraulic systems, to ensure that our bodies are durable and long-lasting"
@@ -25,6 +26,7 @@ const Bodies = () => {
           />
           <TruckCard
             name={"Tilt & slide"}
+            slug={"tilt-and-slide"}
             buttonText={"View tilt & slides"}
             description={
               "Our Tilt & Slide bodies feature a hydraulic tilt frame that allows the entire body to be raised and lowered for easy loading and unloading. Once the vehicle is on the body, it can be slid into position using a hydraulic winch or other lifting mechanism."
@@ -33,7 +35,8 @@ const Bodies = () => {
             imageAlt={"/tilt_and_slide-recovery-truck.jpg"}
           />
           <TruckCard
-            name={"Flat bed"}
+            name={"Flat bed / Dropside"}
+            slug={"flat-bed"}
             buttonText={"View flat beds"}
             description={
               "Our Flat-Bed bodies feature a simple and versatile design,providing a flat, level surface for carrying equipment andmaterials of various sizes and weights. They are ideal for thetransportation of larger equipment, machinery, and other materials."
@@ -43,6 +46,7 @@ const Bodies = () => {
           />
           <TruckCard
             name={"Twin deck"}
+            slug={"twin-deck"}
             buttonText={"View twin decks"}
             description={
               "Our Flat-Bed bodies feature a simple and versatile design,providing a flat, level surface for carrying equipment andmaterials of various sizes and weights. They are ideal for thetransportation of larger equipment, machinery, and other materials."

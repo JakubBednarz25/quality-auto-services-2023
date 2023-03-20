@@ -3,6 +3,7 @@ type category = "LED Lights" | "Winches" | "Air suspensions";
 type ItemType = {
   id: number;
   name: string;
+  slug: string;
   category: category;
   imageUrl: string;
   extraImages?: string[];
@@ -14,6 +15,7 @@ const items: ItemType[] = [
   {
     id: 1,
     name: "LED Pair Progressive Indicators",
+    slug: "led-pair-progressive-indicators",
     category: "LED Lights",
     imageUrl: "/shop/led-lights/led-light-1.jpg",
     extraImages: [
@@ -29,6 +31,7 @@ const items: ItemType[] = [
     id: 2,
     category: "Winches",
     name: "PUNDMANN PREMIUM WINCH 9500LBS",
+    slug: "pundmann-premium-winch-9500lbs",
     imageUrl: "/shop/winches/winch-1.jpg",
     price: 40000,
     description:
@@ -38,6 +41,7 @@ const items: ItemType[] = [
     id: 3,
     category: "Air suspensions",
     name: "AIR SUSPENSION KIT VW CRAFTER 2006-2016",
+    slug: "vw-crafter-2006-2016",
     imageUrl: "/shop/air-suspensions/vw-crafter-1.jpg",
     extraImages: [
       "/shop/air-suspensions/bellows.jpg",

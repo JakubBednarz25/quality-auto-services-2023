@@ -9,6 +9,7 @@ const trucks = [
   {
     id: 1,
     name: "Beaver tail",
+    slug: "beaver-tail",
     descriptions: [
       {
         id: 1,
@@ -52,6 +53,7 @@ const trucks = [
   {
     id: 2,
     name: "Tilt & slide",
+    slug: "tilt-and-slide",
     descriptions: [
       {
         id: 1,
@@ -90,6 +92,7 @@ const trucks = [
   {
     id: 3,
     name: "Flat bed",
+    slug: "flat-bed",
     descriptions: [
       {
         id: 1,
@@ -128,6 +131,7 @@ const trucks = [
   {
     id: 4,
     name: "Twin deck",
+    slug: "twin-deck",
     descriptions: [
       {
         id: 1,
@@ -163,7 +167,7 @@ const trucks = [
 export const getServerSideProps = (ctx) => {
   const { name } = ctx.params;
   console.log(ctx.params);
-  const truck = trucks.find((t) => t.name === name);
+  const truck = trucks.find((t) => t.slug === name);
   return {
     props: { truck },
   };
@@ -195,7 +199,10 @@ const Body = ({ truck }) => {
         </section>
         <div className={styles.weights}>
           {truck.weights.map((weight) => (
-            <article className={styles.truckBody} key={`${truck.name}-${weight.weight}`}>
+            <article
+              className={styles.truckBody}
+              key={`${truck.name}-${weight.weight}`}
+            >
               <header>
                 <h3>{`${weight.weight} ${truck.name}`}</h3>
                 <div className={styles.divider}></div>

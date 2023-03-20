@@ -16,7 +16,7 @@ import Link from "next/link";
 export const getServerSideProps = (ctx) => {
   const { name } = ctx.params;
   console.log(ctx.params);
-  const item = items.find((t) => t.name === name);
+  const item = items.find((t) => t.slug === name);
   return {
     props: { item },
   };
