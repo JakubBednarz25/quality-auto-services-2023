@@ -30,10 +30,10 @@ const Footer = () => {
         <div className={styles.column}>
           <h2>Trucks</h2>
           <ul>
-            <li><Link href="/body/Beaver tail">Beaver tails</Link></li>
-            <li><Link href="/body/Twin deck">Twin decks</Link></li>
-            <li><Link href="/body/Flat bed">Flat beds</Link></li>
-            <li><Link href="/body/Tilt & slide">Tilt & slide</Link></li>
+            <li><Link href="/body/beaver-tail">Beaver tails</Link></li>
+            <li><Link href="/body/twin-deck">Twin decks</Link></li>
+            <li><Link href="/body/flat-bed">Flat beds</Link></li>
+            <li><Link href="/body/Tilt & slide">tilt-and-slide</Link></li>
           </ul>
         </div>
       </div>
