@@ -15,8 +15,8 @@ const Home: NextPage = () => {
       </Head>
       <div className={styles.container}>
         <section className={styles.hero}>
-          <video autoPlay muted loop className={styles.video}>
-            <source src="/hero-section-video.mp4" type="video/mp4" />
+          <video autoPlay muted loop className={styles.video} preload="metadata">
+            <source src="/hero-section-video.mp4#t=0.1" type="video/mp4" />
           </video>
           <div className={styles.shade}>
             <div className={styles.informationSection}>
