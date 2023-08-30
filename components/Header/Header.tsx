@@ -22,10 +22,10 @@ const navigationLinks: NavigationLinkType[] = [
     page: "/shop",
     text: "Shop",
   },
-  {
-    page: "/financing",
-    text: "Financing",
-  },
+  // {
+  //   page: "/financing",
+  //   text: "Financing",
+  // },
   {
     page: "/about",
     text: "About",
