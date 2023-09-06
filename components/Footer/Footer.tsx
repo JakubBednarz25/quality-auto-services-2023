@@ -10,12 +10,12 @@ const Footer = () => {
           <h2>Address</h2>
           <ul>
             <li>Quality Auto Services Ltd</li>
-            <li>Boston Trade Park</li>
-            <li>Unit C10</li>
-            <li>Norfolk Street</li>
+            <li>Cowbridge Business Park</li>
+            <li>Unit 4A</li>
+            <li>Boston Road</li>
             <li>Boston</li>
             <li>Lincolnshire</li>
-            <li>PE21 9HG</li>
+            <li>PE22 7DJ</li>
             <li>United Kingdom</li>
           </ul>
         </div>

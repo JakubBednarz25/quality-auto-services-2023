@@ -2,6 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  .pageErrorMessage{
+    padding:2.5rem;
+  }
   .wrapper {
     padding: var(--base-up-3);
     display:flex;

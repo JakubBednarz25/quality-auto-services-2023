@@ -25,8 +25,8 @@ class Contact extends Component {
               }}
               containerStyle={{ position: "relative", width: "100vw" }}
               initialCenter={{
-                lat: 52.986181,
-                lng: -0.022353,
+                lat: 53.01338,
+                lng: -0.02254,
               }}
               google={this.props.google}
               zoom={14}
