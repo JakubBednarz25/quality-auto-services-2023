@@ -36,17 +36,17 @@ const trucks = [
       {
         weight: "3.5T",
         image: "/trucks/Beaver tail/beaver-tail-truck-body-3.5T.jpg",
-        price: 350000,
+        price: 425000,
       },
       {
         weight: "5.0T",
         image: "/trucks/Beaver tail/beaver-tail-truck-body-5T.jpg",
-        price: 450000,
+        price: 525000,
       },
       {
         weight: "7.0T",
         image: "/trucks/Beaver tail/beaver-tail-truck-body-7T.jpg",
-        price: 600000,
+        price: 725000,
       },
     ],
   },
@@ -80,12 +80,12 @@ const trucks = [
       {
         weight: "3.5T",
         image: "/trucks/Beaver tail/beaver-tail-truck-body-3.5T.jpg",
-        price: 500000,
+        price: 1250000,
       },
       {
         weight: "5.0T",
         image: "/trucks/Beaver tail/beaver-tail-truck-body-5T.jpg",
-        price: 900000,
+        price: 1450000,
       },
     ],
   },
@@ -114,17 +114,17 @@ const trucks = [
       {
         weight: "3.5T",
         image: "/trucks/Beaver tail/beaver-tail-truck-body-3.5T.jpg",
-        price: 300000,
+        price: 299500,
       },
       {
         weight: "5.0T",
         image: "/trucks/Beaver tail/beaver-tail-truck-body-5T.jpg",
-        price: 500000,
+        price: 350000,
       },
       {
         weight: "7.0T",
         image: "/trucks/Beaver tail/beaver-tail-truck-body-5T.jpg",
-        price: 700000,
+        price: 450000,
       },
     ],
   },
@@ -158,7 +158,7 @@ const trucks = [
       {
         weight: "7.0T",
         image: "/trucks/Beaver tail/beaver-tail-truck-body-5T.jpg",
-        price: 1500000,
+        price: 2800000,
       },
     ],
   },
